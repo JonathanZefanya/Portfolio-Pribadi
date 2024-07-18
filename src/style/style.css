@@ -1,6 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
 
+/* 功能区大盒子 */
+.buttons-container {
+  position: fixed;
+  top: 13px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 8888;
+}
+
+/* 播放按钮 */
+.volume-control {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(139, 176, 113, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* 按钮和右边按钮间隔20px */
+  margin-right: 20px;
+}
+
+.volume-control:hover {
+  background-color: #e4e9d9;
+}
+
+.volume-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("volume_icon.png");
+  background-size: 100% 100% ;
+  animation: rotate-icon 5s infinite linear;
+}
+
+@keyframes rotate-icon {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

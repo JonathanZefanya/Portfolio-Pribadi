@@ -1,3 +1,34 @@
+// MUSIC BGM
+
+var isMusicPlayed = true;
+var BGM = new Audio("music/susayang.mp3"); 
+
+function playBackgroundMusic() {
+    BGM.loop = true; // 循环播放
+    BGM.play(); // 播放BGM
+    BGM.volume = 0.1;
+}
+
+var volumeControl = document.getElementById("volume-control");
+var volumeIcon = document.getElementById("volume-icon");
+
+
+volumeControl.addEventListener("click", function () {
+    if (!isMusicPlayed) {
+        // Play music
+        BGM.play();
+        volumeIcon.style.animationPlayState = "running";
+        isMusicPlayed = true;
+    } else {
+        // Pause music
+        BGM.pause();
+        volumeIcon.style.animationPlayState = "paused";
+        isMusicPlayed = false;
+    }
+});
+
+// SCRIPT ASLI
+
 $(document).ready(function () {
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
