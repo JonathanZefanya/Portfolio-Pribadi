@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Jonathan Nathannael Zefanya portofolio, Jonathan, portofolio, Nathannael, Zefanya" />
+  <meta name="description" content="Welcome to Jonathan's Portfolio. Software Developer " />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/style/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css">
+  <link rel="stylesheet" href="src/style/intlTelInput.css">
+  <!-- Favicon -->
+  <link id='favicon' rel="shortcut icon" href="src/assets/images/patih.jpg" type="image/x-png">
+  <title>Portofolio | Jonathan Zefanya</title>
+  <style>
+    :root {
+      --primary-color: #302AE6;
+      --secondary-color: #536390;
+      --font-color: #2a2828;
+      --bg-color: #fff;
+      --heading-color: #ffffff;
+    }
+
+    [data-theme="dark"] {
+      --primary-color: #9A97F3;
+      --secondary-color: #818cab;
+      --font-color: #edf2f5;
+      --bg-color: #161625;
+      --heading-color: #bcc262;
+    }
+
+    body {
+      background-color: var(--heading-color);
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .footer {
+    color: #fff;
+    font-size: 14px;
+    background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url(src/img/back.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: #fff;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #3D2C8D;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #3D2C8D;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .floating {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      left: 40px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+    }
+
+    .fab-icon {
+      margin-top: 16px;
+    }
+
+    .pricing-section {
+      font-family: 'Google Sans', Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin: 15px 0;
+      line-height: 1.7
+    }
+
+    .pricing-section .pricing-title {
+      font-size: 20px;
+      margin: 1rem 0 0;
+      font-weight: 700
+    }
+
+    .pricing-container {
+      display: flex;
+      max-width: 1000px;
+      margin: 0 auto
+    }
+
+    .pricing-tag {
+      margin: .5rem 0 1rem;
+      font-size: 13px;
+      display: inline-block;
+      background: #333;
+      color: #FEF9E7;
+      padding: 3px 15px;
+      border-radius: 20px
+    }
+
+    a.ferisp-order-btn {
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #333;
+      color: #FEF9E7;
+      display: inline-block;
+      padding: 7px 20px;
+      border-radius: 20px;
+      transition: all .3s ease-in-out
+    }
+
+    a.ferisp-order-btn:hover {
+      transform: scale(1.1)
+    }
+
+    .pricing-ferisp-column {
+      background: #FEF9E7;
+      padding: 30px 15px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      text-align: center;
+      width: 33%;
+      margin: 10px;
+      box-shadow: 0 7px 7px rgba(0, 0, 0, 0.06);
+      border: 2px solid #FEF9E7;
+      transition: all .3s ease-in-out
+    }
+
+    .pricing-ferisp-column ul {
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      font-size: 14px;
+      line-height: 2.2
+    }
+
+    .pricing-ferisp-column img {
+      width: 50px
+    }
+
+    .pricing-section i {
+      font-size: 3rem
+    }
+
+    .ferisp-price {
+      font-weight: 700;
+      font-size: 20px
+    }
+
+    .service-info {
+      opacity: .7
+    }
+
+    .ferisp-2-column .pricing-ferisp-column {
+      width: 50%
+    }
+
+    .pricing-ferisp-column:nth-child(1) .ferisp-price,
+    .pricing-ferisp-column:nth-child(1) i {
+      color: #f87200
+    }
+
+    .pricing-ferisp-column:nth-child(2) .ferisp-price,
+    .pricing-ferisp-column:nth-child(2) i {
+      color: #ff5483
+    }
+
+    .pricing-ferisp-column:nth-child(3) .ferisp-price,
+    .pricing-ferisp-column:nth-child(3) i {
+      color: #2b73f6
+    }
+
+    .pricing-ferisp-column:nth-child(1):hover {
+      border-color: #f87200
+    }
+
+    .pricing-ferisp-column:nth-child(2):hover {
+      border-color: #ff5483
+    }
+
+    .pricing-ferisp-column:nth-child(3):hover {
+      border-color: #2b73f6
+    }
+
+    .pricing-ferisp-column:nth-child(1) .pricing-tag,
+    .pricing-ferisp-column:nth-child(1) a.ferisp-order-btn {
+      background: #f87200
+    }
+
+    .pricing-ferisp-column:nth-child(2) .pricing-tag,
+    .pricing-ferisp-column:nth-child(2) a.ferisp-order-btn {
+      background: #ff5483
+    }
+
+    .pricing-ferisp-column:nth-child(3) .pricing-tag,
+    .pricing-ferisp-column:nth-child(3) a.ferisp-order-btn {
+      background: #2b73f6
+    }
+
+    @media screen and (max-width:580px) {
+
+      .pricing-ferisp-column,
+      .ferisp-2-column,
+      .pricing-ferisp-column {
+        width: auto
+      }
+
+      .pricing-container {
+        display: block
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- navbar starts -->
+  <header>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+    <a href="#home" class="logo"><i class="fas fa-dragon"></i>efanya</a>
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="home" id="home">
+    <div id="particles-js"></div>
+    <div class="content">
+      <h2>Hi There,<br />I'Am <span>Jonathan Nathannael Zefanya</span></h2>
+      <p>I Am Into <span class="typing-text"></span></p>
+      <a href="#about" class="btn"><span>About Me</span>
+        <i class="fas fa-arrow-circle-down"></i>
+      </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+      <a href="#contact" class="btn"><span>Hire Me</span>
+        <i class="fas fa-arrow-circle-down"></i>
+      </a>
+      <div class="socials">
+        <ul class="social-icons">
+          <li><a class="github" aria-label="GitHub" href="https://github.com/JonathanZefanya" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a class="instagram" aria-label="Instagram" href="https://www.instagram.com/xeadesta"><i class="fab fa-instagram" target="_blank"></i></a>
+          </li>
+          <li><a class="dev" aria-label="Dev" href="https://www.linkedin.com/in/jonathan-natannael-zefanya-212b9b25a/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="image">
+      <img draggable="false" class="tilt" src="src/assets/images/jonathanzefanya.jpg" alt="" >
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2 class="heading"><i class="fas fa-user-alt"></i> Tentang<span> Saya</span></h2>
+    <div class="row">
+      <div class="image">
+        <img draggable="false" class="tilt" src="src/assets/images/jonathan.jpg" alt="">
+      </div>
+      <div class="content">
+        <h3>I'Am Jonathan Nathannael Zefanya</h3>
+        <span class="tag"><i class="fab fa-php"></i> Web Developer <br><i class="fab fa-android"></i> Android Developer</span>
+        <p style="text-align: justify;">Saya Adalah Developer Yang Berbasis di Indonesia.
+          Saya Seorang Mahasiswa Teknik Informatika dari Institut Teknologi Indonesia.
+          Saya Sangat Bersemangat Untuk Meningkatkan Keterampilan Pengkodean Saya dan Mengembangkan Situs Web.
+          Saya Membangun Aplikasi Mobile dan Situs Web Menggunakan berbagai framework dan bahasa pemrograman lainnya.
+          Bekerja Untuk Diri Sendiri Untuk Meningkatkan Keterampilan Saya. </p>
+        <div class="box-container">
+          <div class="box">
+            <p><span><i class="far fa-hand-point-right"></i> No. WhatsApp : </span>+6283807914090</p>
+            <p><span><i class="far fa-hand-point-right"></i> Email&nbsp;&nbsp;: </span>jonathan.zefanya16@gmail.com</p>
+            <p><span><i class="far fa-hand-point-right"></i> Kota&emsp;: </span>Bogor,Jawa Barat, Indonesia</p>
+          </div>
+        </div>
+        <div class="resumebtn">
+          <a href="#" target="_blank" class="btn"><span class="fa fa-download"> Download CV </span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <div class="resumebtn">
+          <a href="#" target="_blank" class="btn"><span class="fa fa-download"> Sertifikat </span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="skills" id="skills">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Kemampuan dan <span>Keterampilan</span></h2><br>
+    <b>
+      <p class="qoute" style="text-align: center; font-size: 14px; color: white;">Keterampilan Itu Baik dan Jenius Itu
+        Indah, Tapi Sentuhan Yang Tepat Lebih Berharga Dari Keduanya</p>
+    </b>
+    <div class="container">
+      <div class="row" id="skillsContainer">
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" />
+            <span>HTML</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/css3.png" />
+            <span>CSS</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" />
+            <span>JavaScript</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/php.png" />
+            <span>PHP</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/fluency/48/000000/laravel.png" />
+            <span>PHP Laravel</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/bootstrap.png" />
+            <span>Bootstrap</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/github.png" />
+            <span>GitHub</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/50/000000/mysql-logo.png" />
+            <span>MySQL</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/git.png" />
+            <span>Git</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/dart.png" />
+            <span>Dart</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/flutter.png" />
+            <span>Flutter</span>
+          </div>
+        </div>
+        <div class="bar">
+          <div class="info">
+            <img src="https://img.icons8.com/color/48/000000/kotlin.png" />
+            <span>Kotlin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="education" id="education">
+    <h1 class="heading"><i class="fas fa-graduation-cap"></i><span> Pendidikan</span></h1>
+    <b>
+      <p class="qoute">Pendidikan Bukanlah Pembelajaran Fakta, Tetapi Pelatihan Pikiran Untuk Berpikir</p>
+    </b>
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img draggable="false" src="src/assets/images/smanegun1.jpeg" alt="">
+        </div>
+        <div class="content">
+          <h3>SMA - Matematika IPA</h3>
+          <p>SMAN 01 Gunung Sindur</p>
+          <h4>2018-2022 | Gunung Sindur, Indonesia</h4>
+        </div>
+      </div>
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img draggable="false" src="src/assets/images/iti.JPG" alt="">
+        </div>
+        <div class="content">
+          <h3>S1 - Teknik Informatika</h3>
+          <p>Institut Teknologi Indonesia</p>
+          <h4>2022-2026 | Serpong, Indonesia</h4>
+        </div>
+      </div>
+  </section>
+  <br>
+  <section class="work" id="work">
+    <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects<span> </span></h2>
+    <div class="box-container">
+
+      <div class="box tilt">
+      <img draggable="false" src="src/assets/images/project1.jpg" project />
+      <div class="content">
+        <div class="tag">
+      <h3>Portofolio Website</h3>
+        </div>
+        <div class="desc">
+          <p>Situs Web Portofolio Pribadi. Scroll Saja Ke Bawah. Klik View untuk lebih lengkapnya! Jika ingin melihat source code Website ini bisa klik Code</p>
+          <div class="btns">
+            <a href="https://jojo.tirtagt.xyz" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="https://github.com/JonathanZefanya/Portfolio-Pribadi" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    </div>
+    <br><br>
+    <div class="viewall">
+      <a href="#" class="btn">
+        <span>View All </span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+    <br><br>
+  </section>
+  <section class="experience" id="experience">
+    <h2 class="heading"><i class="fas fa-briefcase"></i> Pengalaman Dan Sertifikasi</h2><br>
+    <b>
+      <p class="qoute" style="text-align: center; font-size: 13px;">Orang Tumbuh Melalui Pengalaman Jika Mereka
+        Menjalani Hidup Dengan Jujur dan Berani. Beginilah Cara Karakter Dibangun</p>
+    </b>
+    <br>
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <div class="tag">
+            <h2>Asisten Laboratorium</h2>
+          </div>
+          <div class="desc">
+            <h2>Aslab Teknik Informatika ITI</h2>
+            <p>Oktober 2023 - Saat ini</p>
+          </div>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <div class="tag">
+            <h2>Sertifikasi JWD</h2>
+          </div>
+          <div class="desc">
+            <h3>Pelatihan Junior Web Developer ITI</h3>
+            <p>5 Juli 2024 - Saat ini</p>
+          </div>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <div class="tag">
+            <h2>Sertifikasi JNA</h2>
+          </div>
+          <div class="desc">
+            <h3>Pelatihan Junior Network Engineering</h3>
+            <p> Juni 2023 - Agustus 2023</p>
+          </div>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <div class="tag">
+            <h2>Pembimbing OSK</h2>
+          </div>
+          <div class="desc">
+            <h3>Pembimbing OSK Astronomi SMA Negeri 1 Gunung Sindur</h3>
+            <p>2022 - 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="morebtn">
+      <a href="#" class="btn">
+        <span>View All </span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+  <br><br>
+  <section class="contact" id="contact">
+    <h2 class="heading"><i class="fas fa-headset"></i> Kontak <span>Kami
+      </span></h2>
+    <div class="container">
+      <div class="content">
+        <div class="image-box">
+          <img draggable="false" src="src/assets/images/contact.jpg" alt="">
+        </div>
+        <form method="POST" action="proses.php">
+          <div class="form-group">
+            <div class="field">
+              <input type="text" name="name" id="name" placeholder="Nama Lengkap" required>
+              <i class='fas fa-user'></i>
+            </div>
+            <div class="field">
+              <input type="email" name="email" id="email" placeholder="Email" required>
+              <i class='fas fa-envelope'></i>
+            </div>
+            <div class="field">
+              <input type="tel" name="nohp" id="nohp" placeholder="" required>
+            </div>
+            <div class="message">
+              <textarea placeholder="Pesan" name="message" id="message" required></textarea>
+              <i class="fas fa-comment-dots"></i><br><br>
+              <div class="g-recaptcha" data-sitekey="6LcCk3EkAAAAAFtN_swyqNtgNpmGjAgAn7p3sxaf"></div><br>
+            </div>
+          </div>
+          <div class="button-area">
+            <button type="submit" name="submit">
+              Kirim <i class="fa fa-paper-plane"></i></button>&emsp;
+          </div>
+          <div class="button-area">
+            <button type="reset">
+              Reset <i class="fas fa-sync"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3><span class="fas fa-dragon"></span> Jonathan Zefanya Ismanda</h3>
+        <p>Terima Kasih Telah Mengunjungi Website Portofolio Pribadi Saya. Terhubung Dengan Saya Melalui Media Sosial 🚀
+          <br /><br /> Tetap Bekerja Dengan Cara Pintar.</p>
+      </div>
+      <div class="box">
+        <h3><span class="fa fa-link"></span> Sitemap</h3>
+        <a href="#home"><i class="fas fa-chevron-circle-right"></i> Home</a>
+        <a href="#about"><i class="fas fa-chevron-circle-right"></i> About</a>
+        <a href="#skills"><i class="fas fa-chevron-circle-right"></i> Skills</a>
+        <a href="#education"><i class="fas fa-chevron-circle-right"></i> Education</a>
+        <a href="#work"><i class="fas fa-chevron-circle-right"></i> Work</a>
+        <a href="#experience"><i class="fas fa-chevron-circle-right"></i> Experience</a>
+      </div>
+      <div class="box">
+        <h3><span class="fa fa-headset"></span> Contact Info</h3>
+        <p><i class="fas fa-phone"></i> +6283807914090</p>
+        <p><i class="fas fa-envelope"></i> jonathan.zefanya16gmail.com</p>
+        <p><i class="fas fa-map-marked-alt"></i> Bogor  , Indonesia</p>
+        <div class="share">
+          <a href="https://www.linkedin.com/in/jonathan-natannael-zefanya-212b9b25a/" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
+          <a href="https://github.com/JonathanZefanya" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
+          <a href="mailto:jonathan.zefanya16@gmail.com" class="fas fa-envelope" aria-label="Email" target="_blank"></a>
+          <a href="https://www.instagram.com/xeadesta" class="fab fa-instagram" aria-label="Instagram" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+    <h1 class="credit">Copyright © 2024 JonathanZefanya All Rights Reserved.<br><i class="fas fa-dragon"></i> Design By<a
+        href="https://s.id/jonathan-zefanya" target="_blank"> Jonathan</a></h1>
+  </section>
+  <!-- footer section ends -->
+  
+  <a href="https://wa.me/6283807914090?text=Hii%20" class="floating" target="_blank">
+    <i class="fab fa-whatsapp fab-icon"></i>
+  </a>
+
+  <a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js"
+    integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="src/js/particles.min.js"></script>
+  <script src="src/js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
+    integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="src/js/intlTelInput.js"></script>
+  <script>
+    $("#nohp").intlTelInput({
+      utilsScript: "src/js/intlTelInput.js"
+    });  
+  </script>
+
+  <script>
+    const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+    const titlePage = document.querySelector('.container h2')
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+  <script src="src/js/script.js"></script>
+</body>
+
+</html>
