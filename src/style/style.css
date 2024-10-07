@@ -19,6 +19,12 @@ html {
 body {
   background: #f7f7f7;
   font-family: "Poppins", sans-serif;
+  cursor: url("../img/cursor.png"), auto;
+}
+
+img {
+  width: 50%;
+  float: left;
 }
 
 *::selection {
