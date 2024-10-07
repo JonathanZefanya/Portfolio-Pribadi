@@ -15,11 +15,13 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  cursor: url("../img/cursor.png"), auto;
+
 }
 body {
   background: #f7f7f7;
   font-family: "Poppins", sans-serif;
-  cursor: url("../img/cursor.png"), auto;
+  /* cursor: url("../img/cursor.png"), auto; */
 }
 
 img {
